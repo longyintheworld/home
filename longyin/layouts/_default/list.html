@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <main id="main">
+    <h1>{{ .Title }}</h1>
+    <ul class="patterns-list">
+    {{ range .Pages.ByPublishDate.Reverse }}
+      <li>
+        <h3>
+          <a href="{{ .Permalink }}">
+              <use xlink:href="#bookmark"></use>
+            </svg>
+            {{ .Title }}
+          </a>
+        </h2>
+      </li>        
+    {{ end }}
+    </ul>
+  </main>
+{{ end }}
